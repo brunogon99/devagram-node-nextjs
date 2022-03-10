@@ -35,7 +35,7 @@ const endpointCadastro =
             email : usuario.email,
             senha : md5(usuario.senha)
         }
-        await UsuarioModel.create(usuario);
+        await UsuarioModel.create(usuarioASerSalvo);
         return res.status(200).json({msg: 'Usuario criado com sucesso'});
     }
     return res.status(405).json({erro : 'Metodo informado não é válido'});
